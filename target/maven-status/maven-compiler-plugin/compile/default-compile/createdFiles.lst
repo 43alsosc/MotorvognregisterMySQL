@@ -1,0 +1,5 @@
+com/example/motorvognregister/Motorvogn.class
+com/example/motorvognregister/MotorvognController.class
+com/example/motorvognregister/ServletInitializer.class
+com/example/motorvognregister/MotorvognRepository.class
+com/example/motorvognregister/MotorvognregisterApplication.class
