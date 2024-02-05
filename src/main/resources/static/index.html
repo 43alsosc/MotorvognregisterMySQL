@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Set character set and title for the HTML document -->
+  <meta charset="UTF-8">
+  <title>motorvognregister</title>
+
+  <!-- Include Tailwind CSS for styling -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+  <!-- Include jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body class="bg-gray-100 p-8 grid grid-cols-5 gap-8">
+
+<!-- Left column with form inputs -->
+<div class="col-span-1">
+
+  <h1 class="text-2xl font-bold mb-4">Motorvogn register</h1>
+
+  <!-- Input fields for owner's information -->
+  <div class="mb-4">
+    <label for="navn" class="block text-sm font-semibold mb-1">Eiers hele navn:</label>
+    <input type="text" id="navn" class="border p-2 w-full">
+  </div>
+
+  <div class="mb-4">
+    <label for="personnummer" class="block text-sm font-semibold mb-1">Eiers Personnummer:</label>
+    <input type="number" id="personnummer" class="border p-2 w-full" maxlength="11">
+    <small class="text-gray-500">Format: DDMMYYXXXXX</small>
+  </div>
+
+  <div class="mb-4">
+    <label for="adresse" class="block text-sm font-semibold mb-1">Eiers adresse:</label>
+    <textarea id="adresse" class="border p-2 w-full" rows="3" placeholder="Gateadresse, postnummer, sted"></textarea>
+    <small class="text-gray-500">Format: Gateadresse, postnummer, sted</small>
+  </div>
+
+  <!-- Input fields for vehicle information -->
+  <div class="mb-4">
+    <label for="kjennetegn" class="block text-sm font-semibold mb-1">Kjennetegn:</label>
+    <input type="text" id="kjennetegn" class="border p-2 w-full">
+    <small id="kjennetegn-format" class="text-gray-500">Format: AB12345</small>
+    <small id="kjennetegn-feilmelding" class="text-red-500"></small>
+  </div>
+
+
+  <!-- Endre bilmerke-input til dropdown og fjern biltype-input -->
+  <div class="mb-4">
+    <label for="bilmerke" class="block text-sm font-semibold mb-1">Bilmerke:</label>
+    <select id="bilmerke" class="border p-2 w-full" onchange="hentBilTyper()">
+      <!-- Bruk JavaScript for å fylle inn bilmerkene dynamisk -->
+    </select>
+  </div>
+
+  <!-- Add a new dropdown for car types -->
+  <div class="mb-4">
+    <label for="biltype" class="block text-sm font-semibold mb-1">Biltype:</label>
+    <select id="biltype" class="border p-2 w-full"></select>
+  </div>
+
+  <!-- Button to register the vehicle -->
+  <button onclick="lagreMotorvogn()" class="bg-blue-500 text-white p-2 rounded">Registrer</button>
+
+</div>
+
+<!-- Right column to display registered vehicles and a button to delete all records -->
+<div class="col-span-4">
+  <div id="motorvognene" class="mt-8"></div>
+
+  <!-- Button to delete all registered vehicles -->
+  <button onclick="slettAlleMotorvogner()" class="bg-red-500 text-white p-2 rounded mt-4">Slett registrerte</button>
+</div>
+
+<!-- JavaScript section for interacting with the server -->
+<script type="application/javascript" src="script.js">
+
+</script>
+</body>
+</html>

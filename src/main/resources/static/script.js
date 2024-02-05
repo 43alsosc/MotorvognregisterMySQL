@@ -16,6 +16,14 @@ function lagreMotorvogn() {
 
     skjulFeilmeldingOgOppdaterFormat(kjennetegnInput, 'Format: AB12345');
 
+    const motorvogn = {
+        navn: $('#navn').val(),
+        adresse: $('#adresse').val(),
+        personnummer: $('#personnummer').val(),
+        kjennetegn: kjennetegn, // Use the validated license plate
+        bilmerke: $('#bilmerke').val(),
+        biltype: $('#biltype').val()
+    };
 
     $.ajax({
         type: 'POST',
@@ -92,7 +100,7 @@ function formaterData(motorvogner) {
 function slettAlleMotorvogner() {
     const confirmDelete = confirm("Er du sikker på at du vil slette alle registrerte motorvogner?");
     if (confirmDelete) {
-        $.get("/api/slettAlle", function () {
+        $.get("/slettAlle", function () {
             hentAlleMotorvogner();
         });
     }
