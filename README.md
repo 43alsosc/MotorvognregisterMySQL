@@ -3,6 +3,8 @@ https://alsos.notion.site/MySQL-og-Tomcat-fa843feef3a24cd48afb8ee6c298b580?pvs=4
 
 # MySql MariaDB Motorvognregister Prosjekt
 
+Dette prosjektet er laget i vg2, 2 IM på Akademiet vgs Oslo.
+<br>
 Dette prosjektet er et motorvognregister implementert ved hjelp av Spring Boot (Java) på serversiden og HTML med JavaScript på klientsiden. Målet med prosjektet er å opprette, lagre, hente og slette motorvognsdata gjennom en nettleserbasert brukergrensesnitt.
 
 ## Serversiden (Java):
